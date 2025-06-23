@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open the Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background: #8c52ff;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+      transform: scale(1.05);
+    }
+
+    .message {
+      display: none;
+      position: absolute;
+      bottom: -40px;
+      background: #333;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box" onclick="openBox()">
+    Click to Open
+    <div class="message" id="secretMessage">🎉 Surprise! You found the message!</div>
+  </div>
+
+  <script>
+    function openBox() {
+      const message = document.getElementById('secretMessage');
+      message.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
